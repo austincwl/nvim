@@ -37,15 +37,15 @@ set ttyfast                 " Speed up scrolling in Vim
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "call plug#end()
 
-call plug#begin()
- Plug 'dracula/vim'
- Plug 'ryanoasis/vim-devicons'
- Plug 'honza/vim-snippets'
- Plug 'scrooloose/nerdtree'
- Plug 'preservim/nerdcommenter'
- Plug 'mhinz/vim-startify'
- Plug 'neoclide/coc.nvim', {'branch': 'release'}
-call plug#end()
+"call plug#begin()
+" Plug 'dracula/vim'
+ "Plug 'ryanoasis/vim-devicons'
+ "Plug 'honza/vim-snippets'
+ "Plug 'scrooloose/nerdtree'
+ "Plug 'preservim/nerdcommenter'
+ "Plug 'mhinz/vim-startify'
+ "Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"call plug#end()
 
 
 colorscheme ron
