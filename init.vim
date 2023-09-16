@@ -1,5 +1,11 @@
 set nocompatible            " disable compatibility to old-time vi
 
+"remap windows movement
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
 "Appearence
 colorscheme default
 set background=dark
