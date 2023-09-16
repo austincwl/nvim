@@ -17,7 +17,7 @@ set number                  " add line numbers
 set rnu
 set wildmode=longest,list   " get bash-like tab completions
 set nobackup                " Do not save backup files.
-set scrolloff=10            " Do not let cursor scroll below or above N number of lines when scrolling.
+set scrolloff=5             " Do not let cursor scroll below or above N number of lines when scrolling.
 set nowrap                  " Do not wrap lines. Allow long lines to extend as far as the line goes.
 
 set mouse=a                 " enable mouse click
@@ -49,7 +49,7 @@ set wildmode=list:longest   " Make wildmenu behave like similar to Bash completi
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 
 "Plugins
-call plug#begin('/home/austin/.local/share/nvim/plugged')
+call plug#begin('~/.local/share/nvim/plugged')
     Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' } 
     Plug 'itchyny/lightline.vim'
 call plug#end()
