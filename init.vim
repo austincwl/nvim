@@ -7,9 +7,14 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 "Appearence
-colorscheme default
+colorscheme desert
 set background=dark
 syntax on                   " Turn syntax highlighting on.
+
+if has('termguicolors')
+    set termguicolors
+endif
+
 
 "Behaviour
 set showmatch               " show matching 
@@ -59,3 +64,4 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' } 
     Plug 'itchyny/lightline.vim'
 call plug#end()
+
