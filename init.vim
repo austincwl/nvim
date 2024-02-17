@@ -8,7 +8,7 @@ nnoremap <C-l> <C-w>l
 
 "Appearence
 colorscheme default
-set background=dark
+set background=light
 syntax on                   " Turn syntax highlighting on.
 
 "Behaviour
@@ -37,7 +37,7 @@ filetype indent on          " Load an indent file for the detected file type.
 
 "Search
 set ignorecase              " Ignore capital letters during search.
-set hlsearch                " highlight search 
+"set hlsearch                " highlight search 
 set incsearch               " incremental search
 set smartcase               " Override the ignorecase option if searching for capital letters.
 
@@ -54,8 +54,35 @@ set wildmode=list:longest   " Make wildmenu behave like similar to Bash completi
 " Wildmenu will ignore files with these extensions.
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 
+"set linebreak only for markdown files
+if &filetype ==# 'markdown'
+    set wrap linebreak
+endif
+
 "Plugins
 call plug#begin('~/.local/share/nvim/plugged')
     Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' } 
     Plug 'itchyny/lightline.vim'
 call plug#end()
+
+"Semshi Colors
+function MyCustomHighlights()
+    hi semshiGlobal      ctermfg=red guifg=#ff0000
+    hi semshiLocal           ctermfg=209 guifg=#ff875f
+    hi semshiGlobal          ctermfg=214 guifg=#ffaf00
+    hi semshiImported        ctermfg=214 guifg=#ffaf00 cterm=bold gui=bold
+    hi semshiParameter       ctermfg=75  guifg=#5fafff
+    hi semshiParameterUnused ctermfg=117 guifg=#87d7ff cterm=underline gui=underline
+    hi semshiFree            ctermfg=218 guifg=#ffafd7
+    hi semshiBuiltin         ctermfg=207 guifg=#ff5fff
+    hi semshiAttribute       ctermfg=6   guifg=#00ffaf
+    hi semshiSelf            ctermfg=249 guifg=#b2b2b2
+    hi semshiUnresolved      ctermfg=197 guifg=#ffff00 cterm=underline gui=underline
+    hi semshiSelected        ctermfg=231 guifg=#ffffff ctermbg=161 guibg=#d7005f
+
+    hi semshiErrorSign       ctermfg=231 guifg=#ffffff ctermbg=160 guibg=#d70000
+    hi semshiErrorChar       ctermfg=231 guifg=#ffffff ctermbg=160 guibg=#d70000
+sign define semshiError text=E> texthl=semshiErrorSign
+endfunction
+autocmd FileType python call MyCustomHighlights()
+
